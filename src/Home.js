@@ -1,8 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import conf from "../src/assets/conf.jpg";
+import anim from "../src/assets/animation.gif";
 import Navbar from "./components/Navbar";
+
 
 const Home = () => {
   const [RoomCode, setRoomCode] = useState("");
@@ -14,34 +15,37 @@ const Home = () => {
   };
 
   return (
-    <div className=" ">
+    <div className="">
       {/* Navbar */}
       <Navbar />
       {/* Hero */}
       <div className="relative h-screen ">
         {/* Image */}
-        <div className="absolute h-full w-full flex overflow-hidden">
-          <img src={conf} className="object-cover  w-full h-full" />
+        <div className="absolute h-full w-full flex overflow-hidden bg-gray-950">
+          {/* <img src={conf} className="object-cover  w-full h-full" /> */}
         </div>
         {/* Overlay */}
         <div className="absolute h-full w-full flex overflow-hidden bg-black/60"></div>
         {/* Hero Info */}
-        <div className="lg:flex lg:pt-20 flex-col items-center justify-center relative z-10 px-6 md:max-w-[90vw] mx-auto">
+        <div className="lg:flex lg:pt-5 flex items-center justify-evenly relative z-10 px-6  md:max-w-[70vw] mx-auto  bg-gray-900 absolute top-20 ">
           {/* Main */}
-          <div className=" flex flex-col items-center justify-center pb-8">
-            <h1 className="text-[50px] md:text-[80px] text-white font-bold pt-12">
+          <div className=" flex flex-col items-center justify-center pb-8 ">
+            {/* <h1 className="text-[50px] md:text-[80px] text-white font-bold pt-12">
               Video Chat App
-            </h1>
-            <p className="text-[26px] text-white  -mt-2">With ZegoCloud</p>
+
+            </h1> */}
+            <img src={anim} className=" md:max-w-[40vw] " />
           </div>
 
           {/* Enter Code */}
           <form
             onSubmit={submitCode}
-            className="text-white md:pt-12 flex flex-col items-center justify-center"
+            className="text-white md:pt-2 flex flex-col items-center justify-center"
           >
+           
             <div className=" flex flex-col justify-center items-center">
-              <label className="text-[30px] md:text-[40px] font-bold pt-6">
+          
+              <label className="text-[3rem] md:text-[2.5rem] font-bold whitespace-nowrap text-2xl ">
                 Enter Room Code
               </label>
               <input
@@ -57,7 +61,7 @@ const Home = () => {
               type="submit"
               className=" bg-blue-500 hover:bg-blue-400 duration-100 ease-out font-bold w-[5rem] md:w-[7rem] rounded-full py-[5px] md:py-[7px] mt-2 md:mt-4 "
             >
-              Go
+              Join
             </button>
           </form>
         </div>
